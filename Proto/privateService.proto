@@ -1,0 +1,14 @@
+syntax = "proto3";
+ 
+option csharp_namespace = "Protobufs.Private";
+package Protobufs;
+ 
+message Response {
+    string message = 2;
+}
+
+message Request {}
+ 
+service PrivateService {
+  rpc GetPrivateInfo(Request) returns (Response);
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option csharp_namespace = "Protobufs.Public";
+
+package Protobufs;
+
+message JwtResponse {
+    string token = 1;
+}
+
+message JwtRequest {}
+ 
+service PublicService {
+  rpc GetJwt(JwtRequest) returns (JwtResponse);
+}
