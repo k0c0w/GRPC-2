@@ -1,0 +1,15 @@
+﻿syntax = "proto3";
+ 
+import "google/protobuf/timestamp.proto";
+package Protobufs;
+ 
+message ForecastRequest { }
+ 
+message ForecastResponse {
+    google.protobuf.Timestamp Timestamp = 1;
+    float temperature = 2;
+}
+ 
+service WeatherForecastStreamer{
+  rpc WeatherForecastStream (ForecastRequest) returns (stream ForecastResponse);
+}
